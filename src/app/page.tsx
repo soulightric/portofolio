@@ -5,8 +5,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "./loading";
 
+export const revalidate = 60;
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="min-h-screen">
       <LoadingScreen />
@@ -18,3 +19,4 @@ export default function Home() {
     </main>
   );
 }
+

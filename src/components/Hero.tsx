@@ -30,7 +30,7 @@ export default function Hero() {
 
             <div className="flex gap-4 justify-center mb-12 flex-wrap">
               <Button size="lg" asChild>
-                <a href="#projects">Purpose</a>
+                <a href="/milestone">Purpose</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="https://www.youtube.com/channel/UCCdW5ISUbmNzFj6EOtr-DnQ" target="_blank" rel="noopener noreferrer">Network</a>
