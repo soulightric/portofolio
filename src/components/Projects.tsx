@@ -29,7 +29,7 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">Projects</h2>
-          <p className="text-xl text-muted-foreground">karya aku saya banggakan, meskipun baru beberapa satu aja sih</p>
+          <p className="text-xl text-muted-foreground">Karya yang aku banggakan, meskipun baru satu aja sih...</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

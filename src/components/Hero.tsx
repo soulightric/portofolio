@@ -25,7 +25,7 @@ export default function Hero() {
               Fikly $ujud
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-              Calon Full Stack • CEO Enthusiast • Secret Identity
+              Calon Full Stack Dev • CEO Enthusiast • Secret Identity
             </p>
 
             <div className="flex gap-4 justify-center mb-12 flex-wrap">

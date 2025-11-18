@@ -22,8 +22,8 @@ export default function About() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Aku adalah Full Stack Developer yang suka membangun aplikasi web modern, 
-            cepat, dan user-friendly. power F adalah bahan bakar utamaku setelah code.
+            Aku adalah <span className="font-semibold text-primary text-red-500">calon</span> Full Stack Developer yang suka membangun aplikasi web modern, 
+            cepat, dan user-friendly. power F adalah bahan bakar utamaku.
           </p>
         </motion.div>
 
@@ -32,9 +32,9 @@ export default function About() {
             <h3 className="text-2xl font-semibold mb-4">Siapa Aku?</h3>
             <p className="text-muted-foreground leading-relaxed">
               Nama panggung ku <span className="font-semibold text-primary">Soulightric</span>. 
-              Aku lahir dan besar di Indonesia, saat ini fokus membangun proyek-proyek 
-              open source dan freelance sambil terus belajar teknologi terbaru. 
-              Aku percaya kode yang bagus itu seperti puisi — indah, efisien, dan bikin orang tersenyum.
+              Aku lahir dan besar di Indonesia, saat ini lagi fokus ngebuild proyek-proyek 
+              open source dan sambil terus belajar teknologi terbaru. 
+              Aku mungkin terlahir tanpa bakat, tapi aku percaya kalau usaha yang sering di asah akan menyaingi mereka yang berbakat.
             </p>
           </Card>
 

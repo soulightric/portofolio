@@ -13,8 +13,8 @@ const display = Bebas_Neue({
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fikri — Full Stack Developer",
-  description: "Portfolio Full Stack Developer",
+  title: "F$",
+  description: "Portfo Fikri, Calon Full-stack dev",
 };
 
 export default function RootLayout({

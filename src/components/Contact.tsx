@@ -19,7 +19,7 @@ export default function Contact() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4">Get In Touch</h2>
           <p className="text-xl text-muted-foreground">
-            Mau ngobrol, kolab, atau sekadar ngopi virtual? Drop pesan aja!
+            Mau ngobrol, collab, atau sekadar ngopi virtual? Drop pesan aja!
           </p>
         </motion.div>
 
