@@ -24,7 +24,8 @@ export default function Navbar() {
     // { name: "Contact", href: "/contact" },
     { name: "Status", href: "/status"},
     // under construct
-    { name: "Purpose", href: "#"},
+    { name: "Purpose (on)", href: "/purpose"},
+    { name: "Blog (on)", href: "/blog"},
   ];
 
   const closeSheet = () => setOpen(false);
