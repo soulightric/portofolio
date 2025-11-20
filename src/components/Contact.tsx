@@ -25,7 +25,7 @@ export default function Contact() {
 
         <div className="max-w-2xl mx-auto">
           <Card className="p-8 bg-background/60 backdrop-blur border-primary/10">
-            <form action="https://formspree.io/f/xblrjwpq" method="POST" className="space-y-6">
+            <form action="https://formspree.io/f/meonlnba" method="POST" className="space-y-6">
               <Input name="name" placeholder="Nama kamu" required />
               <Input name="email" type="email" placeholder="Email kamu" required />
               <Textarea name="message" rows={6} placeholder="Pesan kamu..." required />
