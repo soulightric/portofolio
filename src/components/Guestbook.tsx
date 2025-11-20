@@ -8,7 +8,7 @@ type Message = {
   id: string;
   name: string;
   message: string;
-  createdAt: string;
+  created_at: string;
 };
 
 export default function Guestbook() {
@@ -36,7 +36,7 @@ export default function Guestbook() {
         id: "temp-" + Date.now(),
         name,
         message,
-        createdAt: new Date().toISOString(),
+        created_at: new Date().toISOString(),
       },
     ]);
 
@@ -96,7 +96,7 @@ export default function Guestbook() {
               <div className="flex justify-between items-start mb-2">
                 <span className="font-bold text-emerald-400">{msg.name}</span>
                 <span className="text-xs text-emerald-600">
-                {new Date(msg.created_at || msg.createdAt).toLocaleDateString("id-ID", {
+                {new Date(msg.created_at || msg.created_at).toLocaleDateString("id-ID", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
