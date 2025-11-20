@@ -10,18 +10,18 @@ import { motion } from "framer-motion";
 export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-muted/50">
-      <div className="container px-6 max-w-2xl mx-auto">
-        <motion.div
+      <div className="container px-6 max-w-2xl mx-auto text-center">
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
-        >
+        > */}
           <h2 className="text-4xl md:text-6xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground mb-16">
             Mau ngobrol, collab, atau sekadar ngopi virtual? Drop pesan aja!
           </p>
-        </motion.div>
+        {/* </motion.div> */}
 
         <div className="max-w-2xl mx-auto">
           <Card className="p-8 bg-background/60 backdrop-blur border-primary/10">

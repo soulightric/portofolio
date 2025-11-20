@@ -21,16 +21,16 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24">
-      <div className="container px-6 max-w-7xl mx-auto">
-        <motion.div
+      <div className="container px-6 max-w-7xl mx-auto text-center">
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
-        >
+        > */}
           <h2 className="text-4xl md:text-6xl font-bold mb-4">Projects</h2>
-          <p className="text-xl text-muted-foreground">Karya yang aku banggakan, meskipun baru satu aja sih...</p>
-        </motion.div>
+          <p className="text-xl text-muted-foreground mb-16">Karya yang aku banggakan, meskipun baru satu aja sih...</p>
+        {/* </motion.div> */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((proj, i) => (

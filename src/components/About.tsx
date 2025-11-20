@@ -13,19 +13,19 @@ export default function About() {
   return (
     <section id="about" className="py-24 bg-muted/50">
       <div className="container px-6 max-w-6xl mx-auto text-center">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
-        >
+        > */}
           <h2 className="text-4xl md:text-6xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Aku <span className="font-semibold text-primary text-red-500">calon</span> Full Stack Developer yang suka membangun aplikasi web modern, 
             cepat, dan user-friendly. power F adalah bahan bakar utamaku.
           </p>
-        </motion.div>
+        {/* </motion.div> */}
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <Card className="p-8 bg-background/60 backdrop-blur border-primary/10">

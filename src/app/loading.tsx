@@ -28,19 +28,19 @@ export default function LoadingScreen() {
         className="text-center"
       >
         {/* <motion.h1
-          className="text-8xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-primary via-purple-400 to-cyan-400 bg-clip-text text-transparent"
+          className="text-8xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
           animate={{ backgroundPosition: ["0%", "%", "0%"] }}
           transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-          style={{ backgroundSize: "300%" }}
+          style={{ backgroundSize: "100%" }}
         >
-          Soulightric
+          Loading
         </motion.h1> */}
 
         <motion.div className="flex justify-center space-x-4">
           {[0, 1, 2, 3, 4].map((i) => (
             <motion.div
               key={i}
-              className="w-4 h-4 bg-primary rounded-full"
+              className="w-4 h-4 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"
               animate={{ y: [0, -30, 0], opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.2 }}
             />

@@ -2,7 +2,7 @@
 
 import Navbar from "./Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Youtube} from "lucide-react";
+import { ArrowDown, Github, Linkedin, Youtube, Instagram} from "lucide-react";
 import { motion } from "framer-motion";
 import MatrixWorms from "./MatrixWorms";
 import Link from "next/link";
@@ -49,6 +49,12 @@ export default function Hero() {
               </a>
               <a href="https://www.youtube.com/channel/UCCdW5ISUbmNzFj6EOtr-DnQ" target="_blank" className="text-muted-foreground hover:text-primary transition">
                 <Youtube className="w-7 h-7" />
+              </a>
+              <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition">
+                <Linkedin className="w-7 h-7 "/>
+              </a>
+              <a href="#" target="blank" className="text-muted-foreground hover:text-primary transition">
+                <Instagram className="lucide lucide-instagram w-7 h-7"/>
               </a>
             </div>
           </motion.div>

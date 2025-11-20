@@ -58,7 +58,7 @@ export default function StatusPlate() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-2 gap-6 mb-8 space-y-1 mb-8 border-b-2 border-blue-600 pb-6">
           <div>
             <div className="flex justify-between mb-2"><span className="text-blue-300">STRENGTH</span><span className="text-white">122</span></div>
             <div className="flex justify-between mb-2"><span className="text-blue-300">AGILITY</span><span className="text-white">120</span></div>
@@ -83,7 +83,7 @@ export default function StatusPlate() {
               <span className="text-white">SELF CONFIDENT LV.MAX</span>
             </div>
           </div>
-
+        
           <div>
             <h3 className="text-blue-400 text-xl mb-3">• ACTIVE SKILLS</h3>
             <div className="grid grid-cols-2 gap-3 text-sm">
