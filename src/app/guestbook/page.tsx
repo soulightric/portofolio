@@ -18,11 +18,11 @@ export default function GuestbookPage() {
 
       <div className="relative z-10 w-full max-w-4xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent mb-4">
+        <div className="text-center mb-10">
+          <h1 className="text-5xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent mb-4">
             GUESTBOOK
           </h1>
-          <p className="text-xl text-emerald-300">Tinggalkan jejak sebelum pergi yaa dude</p>
+          <p className="text-xl text-emerald-300">Tinggalkan jejak sebelum pergi yaa bre</p>
         </div>
 
         {/* Guestbook Component */}

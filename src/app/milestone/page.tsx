@@ -16,7 +16,7 @@ export default function MilestonePage() {
       <div className="max-w-5xl mx-auto">
         {/* Header — tanpa motion (animasi pindah ke client) */}
         <div className="text-center mb-20">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-6xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent mb-4">
             Milestone
           </h1>
           <p className="text-xl text-muted-foreground">Powered by Pain</p>

@@ -20,18 +20,21 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-2xl md:text-4xl font-light text-muted-foreground mb-4">
-              Moshi - moshi, aku
+              はじめまして俺は
             </h2>
             <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent mb-5 leading-tight tracking-tight">
               Fikly $ujud
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
+            {/* <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
               Calon Full Stack Dev • CEO Enthusiast • Secret Identity
-            </p>
+            </p> */}
+            <h2 className="text-2xl md:text-4xl mr-10 ml-10 font-medium text-muted-foreground mb-8">
+              "Aku mungkin terlahir tanpa bakat, but i believe if usaha yang sering di asah, bisa menyaingi bahkan melebihi mereka yang berbakat"
+            </h2>
 
             <div className="flex gap-4 justify-center mb-12 flex-wrap">
               <Button size="lg" asChild>
-                <Link href="/milestone">Milestone</Link>
+                <Link href="/guestbook">Guestbook</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="https://www.etherthink.my.id/" target="_blank">Etherthink</a>
@@ -50,12 +53,12 @@ export default function Hero() {
               <a href="https://www.youtube.com/channel/UCCdW5ISUbmNzFj6EOtr-DnQ" target="_blank" className="text-muted-foreground hover:text-primary transition">
                 <Youtube className="w-7 h-7" />
               </a>
-              <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition">
+              {/* <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition">
                 <Linkedin className="w-7 h-7 "/>
               </a>
               <a href="#" target="blank" className="text-muted-foreground hover:text-primary transition">
                 <Instagram className="lucide lucide-instagram w-7 h-7"/>
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
