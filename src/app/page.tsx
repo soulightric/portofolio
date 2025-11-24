@@ -4,12 +4,16 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "./loading";
+import MatrixWorms from "@/components/MatrixWorms";
+import MilestonePage from "./milestone/page";
 
 export const revalidate = 60;
 
 export default async function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      <LoadingScreen />
+      <MatrixWorms />
       <Hero />
       <About />
       <Projects />

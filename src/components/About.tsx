@@ -11,7 +11,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-muted/50">
+    <section id="about" className="py-24">
       <div className="container px-6 max-w-6xl mx-auto text-center">
         {/* <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function MilestonePage() {
   return (
     <main className="min-h-screen py-24 px-6">
-    <MatrixWorms />
       <div className="max-w-5xl mx-auto">
         {/* Header — tanpa motion (animasi pindah ke client) */}
         <div className="text-center mb-20">

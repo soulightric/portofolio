@@ -10,7 +10,6 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col">
-      <MatrixWorms />
       <Navbar />
       <div className="flex-1 flex items-center justify-center relative">
         <div className="container px-6 max-w-5xl mx-auto text-center">
@@ -25,12 +24,9 @@ export default function Hero() {
             <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent mb-5 leading-tight tracking-tight">
               Fikly Cujud
             </h1>
-            {/* <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
               Calon Full Stack Dev • CEO Enthusiast • Secret Identity
-            </p> */}
-            <h2 className="text-2xl md:text-4xl font-medium text-muted-foreground mb-8">
-              "Aku mungkin terlahir tanpa bakat, tapi aku percaya jika usaha yang sering di asah, bisa menyaingi bahkan melebihi mereka yang berbakat"
-            </h2>
+            </p>
 
             <div className="flex gap-4 justify-center mb-12 flex-wrap">
               <Button size="lg" asChild>
