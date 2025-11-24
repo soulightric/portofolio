@@ -14,11 +14,11 @@ export default function Hero() {
       <Navbar />
       <div className="flex-1 flex items-center justify-center relative">
         <div className="container px-6 max-w-5xl mx-auto text-center">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
+          > */}
             <h2 className="text-2xl md:text-4xl font-light text-muted-foreground mb-4">
               はじめまして俺は
             </h2>
@@ -60,7 +60,7 @@ export default function Hero() {
                 <Instagram className="lucide lucide-instagram w-7 h-7"/>
               </a> */}
             </div>
-          </motion.div>
+          {/* </motion.div> */}
 
           <motion.div
             animate={{ y: [0, 10, 0] }}

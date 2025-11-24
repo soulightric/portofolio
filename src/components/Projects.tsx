@@ -36,10 +36,10 @@ export default function Projects() {
           {projects.map((proj, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 1, y: 1 }}
+              whileInView={{ opacity: 1, y: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              transition={{ delay: i * 1 }}
             >
               <Card className="group h-full overflow-hidden bg-background/60 backdrop-blur border-primary/10 hover:border-primary/40 transition-all duration-500">
                 <div className="relative aspect-video overflow-hidden bg-muted">
