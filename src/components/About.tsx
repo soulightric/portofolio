@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const skills = [
-    "Fedora", "Arch Linux", "Dell Laptop", "Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS"
+    "Fedora Linux", "Arch Linux", "Dell Laptop", "Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion", "Prisma", "PostgreSQL", "Git", "GitHub", "VSCode",
   ];
 
   return (

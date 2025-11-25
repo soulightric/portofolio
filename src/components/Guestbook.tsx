@@ -61,16 +61,41 @@ export default function Guestbook() {
   // Skeleton card
   const SkeletonCard = () => (
     <div className="bg-black/50 border border-emerald-800/30 rounded-xl p-5 animate-pulse">
-      <div className="flex justify-between items-start mb-3">
-        <div className="h-5 bg-emerald-800/40 rounded w-32"></div>
-        <div className="h-4 bg-emerald-900/30 rounded w-24"></div>
+      {/* Nama skeleton */}
+      <div className="mb-3">
+        <div className="h-6 bg-emerald-700/50 rounded w-40"></div>
       </div>
-      <div className="space-y-2">
-        <div className="h-4 bg-gray-800/50 rounded w-full"></div>
-        <div className="h-4 bg-gray-800/40 rounded w-4/5"></div>
+
+      {/* Pesan skeleton (2 baris) */}
+      <div className="space-y-2 mb-6">
+        <div className="h-4 bg-gray-700/40 rounded w-full"></div>
+        <div className="h-4 bg-gray-700/40 rounded w-11/12"></div>
+        <div className="h-4 bg-gray-700/30 rounded w-3/4"></div>
+      </div>
+
+      {/* Waktu skeleton di kanan bawah */}
+      <div className="text-right">
+        <div className="h-3 bg-emerald-800/30 rounded w-32 inline-block"></div>
       </div>
     </div>
   );
+
+  {/* Skeleton card V2 */}
+  // const SkeletonCard = () => (
+  //   <div className="bg-black/50 border border-emerald-800/30 rounded-xl p-5 skeleton-shimmer">
+  //     <div className="mb-3">
+  //       <div className="h-6 bg-emerald-700/40 rounded w-40"></div>
+  //     </div>
+  //     <div className="space-y-2 mb-6">
+  //       <div className="h-4 bg-gray-700/40 rounded w-full"></div>
+  //       <div className="h-4 bg-gray-700/40 rounded w-11/12"></div>
+  //       <div className="h-4 bg-gray-700/30 rounded w-3/4"></div>
+  //     </div>
+  //     <div className="text-right">
+  //       <div className="h-3 bg-emerald-800/30 rounded w-32 inline-block"></div>
+  //     </div>
+  //   </div>
+  // );
 
   return (
     <div className="space-y-8">
@@ -92,7 +117,7 @@ export default function Guestbook() {
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <input
             name="name"
-            placeholder="Nama kamu (atau nickname)"
+            placeholder="Nama kamu atau Terserah..."
             required
             maxLength={32}
             disabled={isSubmitting}
@@ -100,7 +125,7 @@ export default function Guestbook() {
           />
           <input
             name="message"
-            placeholder="Pesan buat Fikly $ujud..."
+            placeholder="Pesan buat Cujud"
             required
             maxLength={200}
             disabled={isSubmitting}
@@ -141,28 +166,30 @@ export default function Guestbook() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="relative"
               >
-                {/* Tanda "sending" untuk pesan temporary */}
-                {String(msg.id || "").startsWith("temp-") && (
-                  <div className="absolute -left-8 top-6 flex items-center gap-2">
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-emerald-600">sending...</span>
+                <div className="relative">
+                  <div className="bg-black/50 border border-emerald-800/50 rounded-xl p-5 backdrop-blur hover:border-emerald-600/70 transition">
+                    <div className="mb-2">
+                      <span className="font-bold text-emerald-400 text-lg">{msg.name}</span>
+                    </div>
+                    <p className="text-white break-words mb-6">{msg.message}</p>
+                    <div className="text-right">
+                      <span className="text-xs text-emerald-600/80">
+                        {new Date(msg.created_at).toLocaleDateString("id-ID", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </span>
+                      <span className="ml-4 text-xs text-emerald-600/80">
+                        {/* Tanda sending di pojok kanan bawah */}
+                        {msg.id?.toString().startsWith("temp-") && (
+                            <span className="text-xs text-emerald-500">sending...</span>
+                        )}
+                      </span>
+                    </div>
                   </div>
-                )}
-
-                <div className="bg-black/50 border border-emerald-800/50 rounded-xl p-5 backdrop-blur hover:border-emerald-600/70 transition">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="font-bold text-emerald-400">{msg.name}</span>
-                    <span className="text-xs text-emerald-600">
-                      {new Date(msg.created_at).toLocaleDateString("id-ID", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </span>
-                  </div>
-                  <p className="text-white break-words">{msg.message}</p>
                 </div>
               </motion.div>
             ))
