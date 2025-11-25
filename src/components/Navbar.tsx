@@ -34,7 +34,9 @@ export default function Navbar() {
           className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent pl-2"
           onClick={closeSheet}
         >
-          FC
+          <img src="/favicon.ico" alt="favicon.ico"
+           className="w-8 h-8 inline-block mr-2 hover:scale-110 transition-transform"
+          />
         </Link>
 
         {/* Desktop Nav */}
