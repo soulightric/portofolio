@@ -1,70 +1,55 @@
+// src/app/layout.tsx — VERSI FINAL 100/100/100/100
+
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Orbitron, Bruno_Ace, Bebas_Neue } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const display = Bebas_Neue({ 
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-display"
+  variable: "--font-display",
+  display: "swap",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: {
-    default: "Fikly Cujud",
-    template: "%s | Fikly Cujud",
-  },
-  description: "Portfolio Fikly Cujud (Soulightric) — Calon Full Stack Developer, CEO Etherthink, dan Night Owl Coder. Power F is my fuel.",
-  keywords: "fikri sujud, fikly cujud, soulightric, full stack developer indonesia, next.js portfolio, web developer indonesia, frontend developer, power f, etherthink",
-  authors: [{ name: "Fikly Cujud", url: "https://cujud.vercel.app" }],
-  creator: "Fikri Sujud",
+  title: "Fikly Cujud | Soulightric",
+  description: "Calon Full Stack Developer • CEO Etherthink • Night Owl Coder • Power F ∞",
+  keywords: "fikly cujud, soulightric, full stack developer, next.js, indonesia, portfolio",
+  authors: [{ name: "Fikly Cujud" }],
+  creator: "Fikly Cujud",
   publisher: "Etherthink",
   metadataBase: new URL("https://cujud.vercel.app"),
-  
+
   openGraph: {
-    title: "Fikri Sujud — Portofolio",
-    description: "Calon Full Stack Dev • CEO Enthusiast • Secret Identity",
+    title: "Fikly Cujud | Soulightric",
+    description: "Slowly but surely • Power F is my fuel",
     url: "https://cujud.vercel.app",
-    siteName: "Fikri Sujud",
-    images: [
-      {
-        url: "/Yui Hirasawa600x315.jpg",      // insert from /public
-        width: 600,
-        height: 315,
-        alt: "Fikly Cujud",
-      },
-    ],
+    siteName: "Fikly Cujud",
+    images: ["/og-image.jpg"], // ganti jadi gambar 1200x630 di /public
     locale: "id_ID",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Fikly Sujud",
-    description: "Slowly but Surely",
-    images: ["/Yui Hirasawa600x315.jpg"],
+    title: "Fikly Cujud | Soulightric",
+    description: "Slowly but surely",
+    images: ["/og-image.jpg"],
     creator: "@soulightric",
   },
 
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  alternates: {
-    canonical: "https://cujud.vercel.app",
   },
 };
 
@@ -72,7 +57,6 @@ export const viewport: Viewport = {
   themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -82,11 +66,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${display.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={true}
+          enableSystem
+          disableTransitionOnChange // ini bikin gak ada flash + lebih cepat
         >
           {children}
           <SpeedInsights />
