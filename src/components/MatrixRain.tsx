@@ -82,7 +82,7 @@ export default function MatrixRain() {
       }
     };
 
-    const interval = setInterval(draw, 35);
+    const interval = setInterval(draw, 40);
 
     return () => {
       clearInterval(interval);
