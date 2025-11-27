@@ -8,11 +8,11 @@ import {
 
 export default function About() {
   const arsenal = [
-    { name: "Arch Linux", icon: Cpu, color: "text-cyan-400", bg: "bg-cyan-400/10", glow: "shadow-cyan-400/30" },
-    { name: "Fedora", icon: Cpu, color: "text-purple-400", bg: "bg-purple-400/10", glow: "shadow-purple-400/30" },
-    { name: "Dell XPS", icon: Laptop, color: "text-gray-300", bg: "bg-gray-300/10", glow: "shadow-gray-300/30" },
-    { name: "Next.js 15", icon: Rocket, color: "text-white", bg: "bg-white/10", glow: "shadow-white/40" },
-    { name: "TypeScript", icon: Brain, color: "text-blue-400", bg: "bg-blue-400/10", glow: "shadow-blue-400/40" },
+    { name: "Arch Linux", icon: Terminal, color: "text-cyan-500", bg: "bg-cyan-500/10", glow: "shadow-cyan-500/40" },
+    { name: "Fedora", icon: Terminal, color: "text-purple-500", bg: "bg-purple-500/10", glow: "shadow-purple-500/40" },
+    { name: "Dell XPS", icon: Laptop, color: "text-gray-600 dark:text-gray-400", bg: "bg-muted/50", glow: "shadow-gray-500/30" },
+    { name: "Next.js 15", icon: Rocket, color: "text-foreground", bg: "bg-primary/10", glow: "shadow-primary/50" },
+    { name: "TypeScript", icon: Brain, color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-500/10", glow: "shadow-blue-500/40" },
     { name: "React", icon: Sparkles, color: "text-cyan-300", bg: "bg-cyan-300/10", glow: "shadow-cyan-300/40" },
     { name: "Tailwind", icon: Palette, color: "text-teal-400", bg: "bg-teal-400/10", glow: "shadow-teal-400/40" },
     { name: "PostgreSQL", icon: Database, color: "text-orange-400", bg: "bg-orange-400/10", glow: "shadow-orange-400/40" },
@@ -63,8 +63,11 @@ export default function About() {
           </Card>
 
           {/* Arsenal — HANYA HOVER EFEK, NO ANIMATION ON LOAD */}
-          <Card className="relative overflow-hidden bg-background/70 backdrop-blur-xl border-2 border-primary/20 shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-bl from-cyan-500/5 to-transparent" />
+          {/* Arsenal — 100% DARK & LIGHT MODE, HOVER ONLY */}
+          <Card className="relative overflow-hidden bg-background/70 backdrop-blur-xl border-2 border-border/50 shadow-2xl">
+            {/* Gradient background halus yang ikut tema */}
+            <div className="absolute inset-0 bg-gradient-to-bl from-cyan-500/5 dark:from-cyan-500/10 to-transparent" />
+
             <div className="relative p-10">
               <h3 className="text-4xl font-bold mb-8 flex items-center gap-4">
                 <Zap className="w-12 h-12 text-yellow-500" />
@@ -73,25 +76,35 @@ export default function About() {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-5">
                 {arsenal.map((weapon) => (
-                  <div
-                    key={weapon.name}
-                    className="group relative"
-                  >
-                    <div className={`
-                      relative p-5 rounded-2xl border-2 
-                      ${weapon.bg} border-white/10 
-                      backdrop-blur-sm text-center
-                      transition-all duration-300
-                      group-hover:border-white/60 
-                      group-hover:shadow-2xl 
-                      group-hover:${weapon.glow}
-                      group-hover:scale-110
-                      group-hover:bg-white/5
-                    `}>
-                      <weapon.icon className={`w-10 h-10 mx-auto mb-3 ${weapon.color} group-hover:scale-125 transition-transform duration-300`} />
-                      <p className="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">
+                  <div key={weapon.name} className="group relative">
+                    <div
+                      className={`
+                        relative p-5 rounded-2xl border-2
+                        ${weapon.bg} 
+                        border-border/20 
+                        dark:border-white/20
+                        backdrop-blur-sm text-center
+                        transition-all duration-400 ease-out
+                        group-hover:border-primary/60
+                        group-hover:shadow-2xl 
+                        group-hover:${weapon.glow}
+                        group-hover:scale-110
+                        group-hover:bg-primary/5
+                        dark:group-hover:bg-primary/10
+                      `}
+                    >
+                      <weapon.icon 
+                        className={`w-10 h-10 mx-auto mb-3 ${weapon.color} 
+                          group-hover:scale-125 transition-transform duration-300`} 
+                      />
+                      <p className="text-sm font-bold text-foreground/80 group-hover:text-foreground transition-colors">
                         {weapon.name}
                       </p>
+
+                      {/* Optional: Glow orb halus saat hover */}
+                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent blur-xl" />
+                      </div>
                     </div>
                   </div>
                 ))}

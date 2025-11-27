@@ -5,7 +5,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "./loading";
 import MatrixWorms from "@/components/MatrixWorms";
-import MilestonePage from "./milestone/page";
 
 export const revalidate = 60;
 

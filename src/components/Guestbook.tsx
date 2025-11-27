@@ -60,7 +60,7 @@ export default function Guestbook() {
 
   // Skeleton card
   const SkeletonCard = () => (
-    <div className="bg-black/50 border border-emerald-800/30 rounded-xl p-5 animate-pulse">
+    <div className="bg-background/50 border border-emerald-800/30 rounded-xl p-5 animate-pulse">
       {/* Nama skeleton */}
       <div className="mb-3">
         <div className="h-6 bg-emerald-700/50 rounded w-40"></div>
@@ -82,7 +82,7 @@ export default function Guestbook() {
 
   {/* Skeleton card V2 */}
   // const SkeletonCard = () => (
-  //   <div className="bg-black/50 border border-emerald-800/30 rounded-xl p-5 skeleton-shimmer">
+  //   <div className="bg-background/50 border border-emerald-800/30 rounded-xl p-5 skeleton-shimmer">
   //     <div className="mb-3">
   //       <div className="h-6 bg-emerald-700/40 rounded w-40"></div>
   //     </div>
@@ -103,10 +103,10 @@ export default function Guestbook() {
       <form
         ref={formRef}
         action={handleSubmit}
-        className="bg-black/60 border-2 border-emerald-600 rounded-xl p-6 backdrop-blur relative"
+        className="bg-background/60 border-2 border-emerald-600 rounded-xl p-6 backdrop-blur relative"
       >
         {isSubmitting && (
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-xl flex items-center justify-center z-10">
+          <div className="absolute inset-0 bg-background/70 backdrop-blur-sm rounded-xl flex items-center justify-center z-10">
             <div className="flex items-center gap-3">
               <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
               <span className="text-emerald-400 font-medium">Mengirim jejak...</span>
@@ -121,7 +121,7 @@ export default function Guestbook() {
             required
             maxLength={32}
             disabled={isSubmitting}
-            className="px-4 py-3 bg-black/40 border border-emerald-600 rounded-lg text-white placeholder-emerald-700 focus:outline-none focus:border-emerald-400 disabled:opacity-60"
+            className="px-4 py-3 bg-background/40 border border-emerald-600 rounded-lg text-white placeholder-emerald-700 focus:outline-none focus:border-emerald-400 disabled:opacity-60"
           />
           <input
             name="message"
@@ -129,7 +129,7 @@ export default function Guestbook() {
             required
             maxLength={200}
             disabled={isSubmitting}
-            className="px-4 py-3 bg-black/40 border border-emerald-600 rounded-lg text-white placeholder-emerald-700 focus:outline-none focus:border-emerald-400 disabled:opacity-60"
+            className="px-4 py-3 bg-background/40 border border-emerald-600 rounded-lg text-white placeholder-emerald-700 focus:outline-none focus:border-emerald-400 disabled:opacity-60"
           />
         </div>
 
@@ -167,13 +167,11 @@ export default function Guestbook() {
                 className="relative"
               >
                 <div className="relative">
-                  <div className="bg-black/50 border border-emerald-800/50 rounded-xl p-5 backdrop-blur hover:border-emerald-600/70 transition">
-                    <div className="mb-2">
-                      <span className="font-bold text-emerald-400 text-lg">{msg.name}</span>
-                    </div>
-                    <p className="text-white break-words mb-6">{msg.message}</p>
+                  <div className="bg-background/50 border border-emerald-800/50 rounded-xl p-5 backdrop-blur hover:border-emerald-600/70 transition">
+                    <span className="font-bold text-emerald-400 text-lg">{msg.name}</span>
+                    <p className="text-foreground break-words mb-6">{msg.message}</p>
                     <div className="text-right">
-                      <span className="text-xs text-emerald-600/80">
+                      <span className="text-xs text-muted-foreground">
                         {new Date(msg.created_at).toLocaleDateString("id-ID", {
                           year: "numeric",
                           month: "short",

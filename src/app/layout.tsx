@@ -1,5 +1,3 @@
-// src/app/layout.tsx
-
 import type { Metadata, Viewport } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
@@ -25,28 +23,28 @@ export const metadata: Metadata = {
     default: "Fikly Cujud",
     template: "%s | Fikly Cujud",
   },
-  description: "Calon Full Stack Developer • CEO Etherthink • Night Owl Coder •",
-  keywords: "fikri sujud, soulightric, full-stack developer, next.js, indonesia, portfolio",
-  authors: [{ name: "Fikri Sujud" }],
-  creator: "Fikri Sujud",
-  publisher: "Fikri Sujud",
+  description: "Calon Full Stack Developer • CEO Etherthink • Night Owl Coder • Power F ∞",
+  keywords: "fikly cujud, soulightric, full stack developer, next.js, indonesia, portfolio",
+  authors: [{ name: "Fikly Cujud" }],
+  creator: "Fikly Cujud",
+  publisher: "Etherthink",
   metadataBase: new URL("https://cujud.vercel.app"),
 
   openGraph: {
-    title: "Fikri Sujud | Soulightric",
+    title: "Fikly Cujud | Soulightric",
     description: "Slowly but surely • Power F is my fuel",
     url: "https://cujud.vercel.app",
-    siteName: "Fikri Sujud",
-    images: ["/og-image.jpg"], // ganti jadi gambar 1200x630 di /public
+    siteName: "Fikly Cujud",
+    images: ["/Yui Hirasawa600x315.jpg"],
     locale: "id_ID",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Fikri Sujud | Soulightric",
+    title: "Fikly Cujud | Soulightric",
     description: "Slowly but surely",
-    images: ["/og-image.jpg"],
+    images: ["/Yui Hirasawa600x315.jpg"],
     creator: "@soulightric",
   },
 
@@ -62,17 +60,25 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// src/app/layout.tsx → tambah script ini di <head>
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" suppressHydrationWarning>
+      <head>
+        {/* PAKSA HAPUS THEME LAMA — cuma sekali jalan */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (localStorage.getItem('theme')) {
+                localStorage.removeItem('theme');
+              }
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.className} ${display.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          forcedTheme={undefined}
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
