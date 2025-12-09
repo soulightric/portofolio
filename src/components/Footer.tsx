@@ -1,24 +1,24 @@
 // src/components/Footer.tsx
-import Link from "next/link";
-
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black/50 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="left-0 right-0 z-50 border-t border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
 
-          {/* Copyright */}
-          <div className="text-gray-600 dark:text-gray-500">
-            © 2025 Soulightric. Built with{" "}
-            <span className="text-red-600 dark:text-red-500 font-bold">Pain</span>
+          {/* Kiri — Copyright + Pain */}
+          <div className="text-gray-600 dark:text-gray-500 text-center md:text-left">
+            © 2025 Cujud. Built with{" "}
+            <span className="text-emerald-600 dark:text-emerald-500 font-bold">Action</span>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex gap-6">
-            <Link href="/bitcoin" className="text-orange-600 dark:text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition font-medium">
-              Bitcoin
-            </Link>
+          {/* Kanan — Status Vercel Style */}
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+            <span className="text-emerald-600 dark:text-emerald-400 font-medium">
+              All systems normal.
+            </span>
           </div>
+
         </div>
       </div>
     </footer>
