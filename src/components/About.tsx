@@ -1,20 +1,6 @@
 "use client";
 
-import { 
-  Terminal, Cpu, Laptop, Database, GitBranch, Palette, Zap, Code2, 
-  Globe, Server, Rocket, Brain, Gauge, Shield, Sparkles, Coffee, Moon, Code, Globe2 
-} from "lucide-react";
-
 export default function About() {
-  const arsenal = [
-    { name: "Fedora", icon: Globe, color: "text-purple-500", bg: "bg-purple-500/10", glow: "shadow-purple-500/40" },
-    { name: "Dell XPS", icon: Laptop, color: "text-gray-600 dark:text-gray-400", bg: "bg-muted/50", glow: "shadow-gray-500/30" },
-    { name: "Next.js", icon: Rocket, color: "text-foreground", bg: "bg-primary/10", glow: "shadow-primary/50" },
-    { name: "Tailwind", icon: Palette, color: "text-teal-400", bg: "bg-teal-400/10", glow: "shadow-teal-400/40" },
-    { name: "Node.js", icon: Server, color: "text-green-400", bg: "bg-green-400/10", glow: "shadow-green-400/40" },
-    { name: "VSCode", icon: Code2, color: "text-blue-500", bg: "bg-blue-500/10", glow: "shadow-blue-500/40" },
-  ];
-
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       <div className="container px-6 max-w-7xl mx-auto">
