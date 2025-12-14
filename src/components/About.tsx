@@ -19,7 +19,7 @@ export default function About() {
                 Whoami?
               </h3>
               <p className="text-lg leading-relaxed text-foreground/90">
-                Nama panggung: <span className="text-purple-500 font-bold text-2xl">Akira</span>
+                Nama panggung: <span className="text-purple-500 font-bold text-2xl">Akira Tensai</span>
                 <br />Base: Indonesia
                 <br />Mission: Menghancurkan pemerintahan yang korup.
                 <br /><br />
