@@ -21,15 +21,15 @@ export const metadata: Metadata = {
   description: "Calon Full Stack Developer • CEO Etherthink • Secret Identity",
   keywords: "fikly cujud, soulightric, full stack developer, next.js, indonesia, portfolio",
   authors: [{ name: "Fikri Sujud" }],
-  creator: "Fikly Cujud",
+  creator: "Fikri Sujud",
   publisher: "Etherthink",
   metadataBase: new URL("https://cujud.xyz"),
 
   openGraph: {
     title: "Fikri Sujud",
-    description: "Pintar?, aku hanya kebetulan bisa",
+    description: "Calon GIS Engineer",
     url: "https://cujud.xyz",
-    siteName: "Fikly Cujud",
+    siteName: "Fikri Sujud",
     images: ["/og-image.png"],
     locale: "id_ID",
     type: "website",
