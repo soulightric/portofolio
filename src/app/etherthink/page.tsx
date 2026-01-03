@@ -13,7 +13,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="mt-8 text-xl md:text-2xl text-gray-300 font-light">
-            Autonomous Intelligence on Blockchain
+            Testing for the future of decentralized AI on blockchain.
           </p>
         </div>
 
