@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Status", href: "/status"},
-    { name: "Milestone", href: "/milestone"},
+    { name: "Milestones", href: "/milestone"},
     { name: "Purpose (uc)", href: "/purpose"},
     { name: "Notes", href: "https://notes.cujud.xyz/"},
   ];
