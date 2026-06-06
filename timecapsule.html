@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Capsule \ Fikri Sujud</title>
+    <meta name="description" content="Lihat perjalanan hidup yang di tampilkan melalui photo yang di ambil oleh Fikri Sujud">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fs.etherthink.xyz/timecapsule.html">
+    <meta property="og:title" content="Fikri Sujud \ Timecapsule">
+    <meta property="og:description" content="Timecapsule, perjalanan hidup yang di abadikan dalam photo">
+    <meta property="og:image" content="/assets/images/og-image-experience.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fs.etherthink.xyz/timecapsule.html">
+    <meta property="twitter:title" content="Fikri Sujud \ Timecapsule">
+    <meta property="twitter:description" content="Lihat perjalanan hidup yang di abadikan melalu photo oleh Fikri.">
+    <meta property="twitter:image" content="/assets/images/og-image-experience.png">
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --font-primary: 'Space Grotesk', system_ui, sans-serif;
+            --font-secondary: 'Inter', system_ui, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+        }
+
+        h1, h2, h3, .heading-font, nav a, .section-title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid #e4e4e7;
+        }
+        
+        .dark .masonry-item {
+            border-color: #3f3f46;
+        }
+        
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .masonry-item:hover img {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-x-3 group">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <img src="assets/images/logo-fikri.png" alt="Fikri Sujud">
+                    </div>
+                    <span class="font-semibold text-xl tracking-tight group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                        Fikri Sujud
+                    </span>
+                </a>
+                
+                <div class="flex items-center gap-x-6 text-sm">
+                    <a href="/" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-10 text-center">
+        <div class="inline-flex items-center gap-x-2 bg-zinc-100 dark:bg-zinc-900 px-4 py-1.5 mb-4">
+            <i class="fas fa-clock text-zinc-500"></i>
+            <span class="text-sm font-medium">Time Capsule</span>
+        </div>
+        <h1 class="text-5xl font-semibold tracking-tighter">Timecapsule</h1>
+        <p class="mt-4 text-xl text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">
+            Potongan-potongan momen yang membentuk aku hari ini dan masa depan.
+        </p>
+    </div>
+
+    <!-- Masonry Gallery -->
+    <div class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="masonry-grid" id="gallery">
+            <!-- Gambar akan dirender via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" onclick="closeImageModal()" 
+         class="hidden fixed inset-0 bg-black/90 backdrop-blur-sm z-[300] flex items-center justify-center p-6">
+        
+        <div onclick="event.stopImmediatePropagation()" class="max-w-5xl w-full">
+            <div class="flex justify-end mb-4">
+                <button onclick="closeImageModal()" 
+                        class="w-10 h-10 flex items-center justify-center text-white hover:text-zinc-300 transition-colors">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center">
+                <img id="modal-image" class="max-h-[80vh] shadow-2xl" alt="">
+            </div>
+            
+            <div class="mt-6 text-center">
+                <p id="modal-caption" class="text-white text-lg font-medium"></p>
+                <p id="modal-date" class="text-zinc-400 text-sm mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Foto Time Capsule
+        const photos = [
+            {
+                src: "assets/images/capsule/cs-1.png",
+                caption: "Etherthink CEO",
+                date: "2026"
+            },
+            {
+                src: "assets/images/capsule/cs-2.jpg",
+                caption: "Rockie of SMKN 2 BARRU",
+                date: "2024"
+            },
+            {
+                src: "assets/images/capsule/cs-3.webp",
+                caption: "IK24-A sem-2 fotbar",
+                date: "2025"
+            },
+            {
+                src: "assets/images/capsule/cs-4.webp",
+                caption: "IK24-A sem-2 fotbar",
+                date: "2025"
+            },
+            {
+                src: "assets/images/capsule/cs-5.webp",
+                caption: "IK24-A sem-2 fotbar",
+                date: "2025"
+            },
+            {
+                src: "assets/images/capsule/cs-6.webp",
+                caption: "Menara Bosowa build Network",
+                date: "2023"
+            },
+            {
+                src: "assets/images/capsule/cs-7.webp",
+                caption: "IoT Parking system from rasbery pi 5",
+                date: "2023"
+            },
+            {
+                src: "assets/images/capsule/cs-8.webp",
+                caption: "Kominfo frequency cather",
+                date: "2023"
+            },
+            {
+                src: "assets/images/capsule/cs-9.webp",
+                caption: "Build the production server of bosowa education",
+                date: "2023"
+            },
+            {
+                src: "assets/images/capsule/cs-10.webp",
+                caption: "The server bosowa education clear and running",
+                date: "2023"
+            },
+        ];
+
+        function renderGallery() {
+            const container = document.getElementById('gallery');
+            container.innerHTML = '';
+
+            photos.forEach((photo, index) => {
+                const item = document.createElement('div');
+                item.className = `masonry-item cursor-pointer group`;
+
+                item.innerHTML = `
+                    <div class="relative overflow-hidden">
+                        <img src="${photo.src}" 
+                             class="w-full transition-transform duration-300 group-hover:scale-105">
+                        
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white/70 text-xs mt-1">${photo.date}</p>
+                        </div>
+                    </div>
+                `;
+
+                item.onclick = () => showImageModal(photo);
+                container.appendChild(item);
+            });
+        }
+
+        function showImageModal(photo) {
+            document.getElementById('modal-image').src = photo.src;
+            document.getElementById('modal-caption').textContent = photo.caption;
+            document.getElementById('modal-date').textContent = photo.date;
+
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Inisialisasi
+        function initTimeCapsule() {
+            renderGallery();
+
+            // Close modal with Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('image-modal');
+                    if (!modal.classList.contains('hidden')) {
+                        closeImageModal();
+                    }
+                }
+            });
+        }
+
+        window.onload = initTimeCapsule;
+    </script>
+</body>
+</html>
