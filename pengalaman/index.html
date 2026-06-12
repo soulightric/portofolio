@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experience \ Fikri Sujud</title>
+    <meta name="description" content="Lihat riwayat pendidikan, pengalaman kerja, dan sertifikat Fikri Sujud">
+    <meta name="/robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fs.etherthink.xyz/pengalaman/index.html">
+    <meta property="og:title" content="Fikri Sujud \ Experience">
+    <meta property="og:description" content="Riwayat pendidikan, pengalaman, dan sertifikat profesional Fikri.">
+    <meta property="og:image" content="/assets/images/og-image-experience.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fs.etherthink.xyz/pengalaman/index.html">
+    <meta property="twitter:title" content="Fikri Sujud \ Experience">
+    <meta property="twitter:description" content="Lihat perjalanan karir dan sertifikasi Fikri.">
+    <meta property="twitter:image" content="/assets/images/og-image-experience.png">
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --font-primary: 'Space Grotesk', system_ui, sans-serif;
+            --font-secondary: 'Inter', system_ui, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+        }
+
+        h1, h2, h3, .heading-font, nav a, .section-title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40%;
+            height: 2px;
+            background: currentColor;
+            opacity: 0.15;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 48px;
+            bottom: -20px;
+            width: 2px;
+            background: #e4e4e7;
+            z-index: 0;
+        }
+        
+        .dark .timeline-item:before {
+            background: #3f3f46;
+        }
+        
+        .timeline-item:last-child:before {
+            display: none;
+        }
+
+        .timeline-logo {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            z-index: 10;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+        
+        .dark .timeline-logo {
+            background: #18181b;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200">
+    <!-- Navbar -->
+    <nav class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center gap-x-3 group">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                         <img src="/assets/images/logo-fikri.png" alt="Fikri Sujud">
+                    </div>
+                    <span class="font-semibold text-xl tracking-tight group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">Fikri Sujud</span>
+                </a>
+
+                <div class="flex items-center gap-x-6">
+                    <a href="/" class="text-sm font-medium hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-6 pt-14 pb-10">
+        <div class="max-w-2xl">
+            <h1 class="text-5xl font-semibold tracking-tighter">Pengalaman Hidup Saya</h1>
+            <p class="mt-4 text-xl text-zinc-600 dark:text-zinc-400">
+                Riwayat pendidikan, pengalaman, pencapaian dan proyek yang sedang saya kerjakan.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 pb-20 space-y-16">
+
+        <!-- ==================== RIWAYAT PENDIDIKAN ==================== -->
+        <section>
+            <h2 class="text-3xl font-semibold tracking-tight mb-8">Riwayat Pendidikan</h2>
+            <div id="education-list" class="space-y-8"></div>
+        </section>
+
+        <!-- ==================== PENGALAMAN ==================== -->
+        <section>
+            <h2 class="text-3xl font-semibold tracking-tight mb-8">Pengalaman</h2>
+            <div id="experience-list" class="space-y-8"></div>
+        </section>
+
+        <!-- ==================== LISENSI & SERTIFIKAT ==================== -->
+        <section>
+            <h2 class="text-3xl font-semibold tracking-tight mb-8">Lisensi &amp; Sertifikat</h2>
+            
+            <div id="certificates-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <!-- Sertifikat akan di-render via JavaScript -->
+            </div>
+        </section>
+
+        <!-- ==================== PROYEK YANG SEDANG DIKERJAKAN ==================== -->
+        <section>
+            <h2 class="text-3xl font-semibold tracking-tight mb-8">Proyek yang Sedang Dikerjakan</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border border-zinc-200 dark:border-zinc-700 p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="font-semibold text-xl">Etherthink Synergy Frontier</h3>
+                            <p class="text-emerald-600 dark:text-emerald-400 text-sm font-medium mt-1">Sedang Aktif</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300">Ongoing</span>
+                    </div>
+                    <p class="mt-4 text-zinc-600 dark:text-zinc-400">
+                        Pengembangan platform edutainment dan personal branding. 
+                        Saat ini sedang dalam tahap persiapan ekspansi ke struktur PT dan PTE LTD.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-zinc-100 dark:bg-zinc-800">Company</span>
+                        <span class="px-3 py-1 text-xs bg-zinc-100 dark:bg-zinc-800">Youtube Platform</span>
+                        <span class="px-3 py-1 text-xs bg-zinc-100 dark:bg-zinc-800">Startup</span>
+                        <span class="px-3 py-1 text-xs bg-zinc-100 dark:bg-zinc-800">Education</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== CERTIFICATE MODAL ==================== -->
+    <div id="cert-modal" onclick="closeCertModal()" 
+        class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[300] flex items-center justify-center p-6">
+        
+        <div onclick="event.stopImmediatePropagation()" 
+            class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 max-w-5xl w-full max-h-[92vh] overflow-auto rounded-2xl">
+            
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-700 sticky top-0 bg-white dark:bg-zinc-900 z-10">
+                <div>
+                    <h3 id="modal-cert-title" class="text-xl font-semibold"></h3>
+                    <p id="modal-cert-issuer" class="text-sm text-zinc-500 dark:text-zinc-400"></p>
+                </div>
+                
+                <div class="flex items-center gap-x-2">
+                    <!-- Tombol Navigasi Gambar -->
+                    <div id="image-nav" class="hidden items-center gap-x-2 mr-4">
+                        <button onclick="changeCertImage(-1)" 
+                                class="w-9 h-9 flex items-center justify-center border border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="changeCertImage(1)" 
+                                class="w-9 h-9 flex items-center justify-center border border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <a id="modal-download-btn" href="#" download 
+                    class="px-4 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold flex items-center gap-x-2 text-sm hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors">
+                        <i class="fas fa-download"></i>
+                        <span>Download</span>
+                    </a>
+                    
+                    <button onclick="closeCertModal()" class="w-9 h-9 flex items-center justify-center text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gambar Sertifikat -->
+            <div class="p-6 flex justify-center bg-zinc-100 dark:bg-zinc-950 min-h-[400px]">
+                <img id="modal-cert-image" class="max-w-full max-h-[65vh] object-contain rounded-xl shadow" alt="Certificate">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-200 dark:border-zinc-800 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-sm text-zinc-500">
+            © 2026 Fikri \ All Right Reserved.
+            <a href="index.html" class="hover:text-zinc-700 dark:hover:text-zinc-300">Kembali ke Beranda</a>
+        </div>
+    </footer>
+
+    <script>
+        function initializeTailwind() {
+            tailwind.config = {
+                darkMode: 'media',
+                theme: { extend: {} }
+            };
+        }
+
+        // ==================== DATA SECTION ====================
+        // Tambahkan data baru di sini. 
+        // Gunakan "logo" untuk gambar, atau "initials" jika tidak ada logo.
+
+        const educationData = [
+            {
+                degree: "S1 Ilmu Komputer",
+                institution: "Institut Teknologi Bacharuddin Jusuf Habibie",
+                period: "2024 — Sekarang",
+                description: "Sedang menempuh pendidikan S1 Ilmu Komputer. Fokus pada mata kuliah yang berhubungan dengan jaringan, server, hingga pengembangan web.",
+                logo: "/assets/images/ith.png",                    // Kosongkan jika tidak ada logo
+                initials: "ITH"               // Inisial yang akan ditampilkan
+            },
+            {
+                degree: "Teknik Komputer dan Jaringan",
+                institution: "SMKN 2 BARRU",
+                period: "2021 — 2024",
+                description: "Pernah menempuh ilmu di sekolah menengah kejuruan dengan mengambil jurusan teknik komputer dan jaringan yang menjadi awal sekaligus melanjutkan minatku pada teknologi sejak masih duduk di bangku sekolah dasar.",
+                logo: "/assets/images/smkn2barru.png",                    // Kosongkan jika tidak ada logo
+                initials: "S2B"               // Inisial yang akan ditampilkan
+            }
+        ];
+
+        const experienceData = [
+            {
+                title: "Founder & Surveyor",
+                company: "Centreth - Hybrid",
+                period: "Juny 2026 — Sekarang",
+                description: "Membangun dan mengembangkan Centreth sebagai startup di bidang geospasial dan surveyor yang mengelola proyek swadaya, pemerintahan, balik nama, perbaikan peta, dan lain sebagainya.",
+                logo: "/assets/images/Centreth-reguler.png",
+                initials: "ETRK",
+                tags: ["Geospasial", "Startup", "Surveyor"]
+            },
+            {
+                title: "Founder & Developer",
+                company: "Etherthink - Hybrid",
+                period: "Jan 2024 — Sekarang",
+                description: "Membangun dan mengembangkan Etherthink sebagai platform yang membahas edukasi dalam bentuk video, berawal dari youtube untuk meningkatkan personal branding.",
+                logo: "/assets/images/Etherthink-reguler.png",                    // Bisa diisi nanti dengan path logo
+                initials: "ETRK",
+                tags: ["Next.js", "Startup", "Product Development"]
+            },
+            {
+                title: "Asisten Surveyor",
+                company: "Nusantara Media Informatika - contract",
+                period: "Sep 2025 - Des 2025",
+                description: "Di Nusantara Media Informatika, saya bertugas sebagai asisten dari surveyor yang bergerak di bidang Geospasial dalam pengukuran dan pemetaan skala kecamatan. Saya menggunakan alat bernama RTK GNSS South Base dan Rover yang mengambil titik per titik di lapangan.",
+                logo: "/assets/images/nmi.png",
+                initials: "NMI",
+                tags: ["Geospasial", "GNSS RTK", "Surveyor"]
+            },
+            {
+                title: "Network Engineer",
+                company: "Bosowa Education - internship",
+                period: "Jul 2023 — Des 2023",
+                description: "Di bosowa education, saya magang sekitar kurang lebih 6 bulan di bagian IT, yang fokus utama ketika magang di bosowa education ini adalah membangun infrastruktur jaringannya, instalasi komputer kedokteran unibos, hingga merakit server untuk bosowa education.",
+                logo: "/assets/images/bosowaeducation.svg",
+                initials: "BSW",
+                tags: ["Network Engineer", "Server Education", "Computer Instalation"]
+            }
+        ];
+
+        const certificatesData = [
+            {
+                id: 1,
+                title: "Bosowa Education Internship",
+                issuer: "Bosowa Education",
+                date: "Juli 2023",
+                thumbnail: "/assets/images/cert-bsw-front.jpg",
+                images: [
+                    "/assets/images/cert-bsw-front.jpg",   // Gambar 1
+                    "/assets/images/cert-bsw-back.jpg"     // Gambar 2 (contoh halaman belakang)
+                ]
+            },
+            {
+                id: 2,
+                title: "Certificate of Competence",
+                issuer: "BNSP",
+                date: "Juli 2024",
+                thumbnail: "/assets/images/cert-bnsp-front.jpg",
+                images: [
+                    "/assets/images/cert-bnsp-front.jpg",
+                    "/assets/images/cert-bnsp-back.jpg"
+                ]
+            },
+            {
+                id: 3,
+                title: "Sertifikat Kehadiran",
+                issuer: "DBS Dicoding",
+                date: "2024",
+                thumbnail: "/assets/images/cert-dbs-front.jpg",
+                images: [
+                    "/assets/images/cert-dbs-front.jpg"
+                ]
+            },
+        ];
+
+        // ==================== RENDER FUNCTIONS ====================
+
+        function renderEducation() {
+            const container = document.getElementById('education-list');
+            container.innerHTML = '';
+
+            educationData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = `timeline-item flex gap-6`;
+                
+                // Placeholder Logo / Inisial
+                let logoHTML = '';
+                if (item.logo) {
+                    logoHTML = `<img src="${item.logo}" alt="${item.institution}" class="w-full h-full object-contain rounded">`;
+                } else {
+                    logoHTML = `<span class="font-semibold text-sm text-zinc-700 dark:text-zinc-300">${item.initials}</span>`;
+                }
+
+                div.innerHTML = `
+                    <div class="timeline-logo bg-white dark:bg-zinc-950 overflow-hidden">
+                        ${logoHTML}
+                    </div>
+                    <div class="flex-1 pt-1">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-1">
+                            <div>
+                                <h3 class="font-semibold text-xl">${item.degree}</h3>
+                                <p class="text-zinc-600 dark:text-zinc-400">${item.institution}</p>
+                            </div>
+                            <div class="text-sm text-zinc-500 dark:text-zinc-400 md:text-right">
+                                ${item.period}
+                            </div>
+                        </div>
+                        <p class="mt-3 text-zinc-600 dark:text-zinc-400">
+                            ${item.description}
+                        </p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderExperiences() {
+            const container = document.getElementById('experience-list');
+            container.innerHTML = '';
+
+            experienceData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = `timeline-item flex gap-6`;
+                
+                // Placeholder Logo / Inisial
+                let logoHTML = '';
+                if (item.logo) {
+                    logoHTML = `<img src="${item.logo}" alt="${item.company}" class="w-full h-full object-contain rounded">`;
+                } else {
+                    logoHTML = `<span class="font-semibold text-sm text-zinc-700 dark:text-zinc-300">${item.initials}</span>`;
+                }
+
+                const tagsHTML = item.tags.map(tag => 
+                    `<span class="px-3 py-1 text-xs bg-zinc-100 dark:bg-zinc-800">${tag}</span>`
+                ).join('');
+
+                div.innerHTML = `
+                    <div class="timeline-logo bg-white dark:bg-zinc-950 overflow-hidden">
+                        ${logoHTML}
+                    </div>
+                    <div class="flex-1 pt-1">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-1">
+                            <div>
+                                <h3 class="font-semibold text-xl">${item.title}</h3>
+                                <p class="text-zinc-600 dark:text-zinc-400">${item.company}</p>
+                            </div>
+                            <div class="text-sm text-zinc-500 dark:text-zinc-400 md:text-right">
+                                ${item.period}
+                            </div>
+                        </div>
+                        <p class="mt-3 text-zinc-600 dark:text-zinc-400">
+                            ${item.description}
+                        </p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            ${tagsHTML}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderCertificates() {
+            const container = document.getElementById('certificates-grid');
+            container.innerHTML = '';
+
+            certificatesData.forEach(cert => {
+                const card = document.createElement('div');
+                card.className = `cert-card border border-zinc-200 dark:border-zinc-700 overflow-hidden cursor-pointer bg-white dark:bg-zinc-900`;
+
+                const extraBadge = cert.images.length > 1 
+                    ? `<div class="absolute top-2 right-2 bg-black/70 text-white text-[10px] px-2 py-0.5 rounded">+${cert.images.length - 1}</div>` 
+                    : '';
+
+                card.innerHTML = `
+                    <div class="relative">
+                        <img src="${cert.thumbnail}" alt="${cert.title}" class="w-full h-40 object-cover">
+                        ${extraBadge}
+                    </div>
+                    <div class="p-3 text-xs">
+                        <p class="font-medium text-zinc-700 dark:text-zinc-300">${cert.title}</p>
+                        <p class="text-zinc-500 dark:text-zinc-400">${cert.issuer} • ${cert.date}</p>
+                    </div>
+                `;
+
+                card.onclick = () => showCertificateModal(cert);
+                container.appendChild(card);
+            });
+        }
+
+        function showCertificateModal(cert) {
+            currentCert = cert;
+            currentImageIndex = 0;
+
+            document.getElementById('modal-cert-title').textContent = cert.title;
+            document.getElementById('modal-cert-issuer').textContent = `${cert.issuer} • ${cert.date}`;
+
+            const nav = document.getElementById('image-nav');
+            nav.classList.toggle('hidden', cert.images.length <= 1);
+            nav.classList.toggle('flex', cert.images.length > 1);
+
+            updateModalImage();
+
+            const modal = document.getElementById('cert-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateModalImage() {
+            const img = document.getElementById('modal-cert-image');
+            img.src = currentCert.images[currentImageIndex];
+
+            const downloadBtn = document.getElementById('modal-download-btn');
+            downloadBtn.href = currentCert.images[currentImageIndex];
+        }
+
+        function changeCertImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = currentCert.images.length - 1;
+            if (currentImageIndex >= currentCert.images.length) currentImageIndex = 0;
+            updateModalImage();
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('cert-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function initializePortfolio() {
+            initializeTailwind();
+            renderEducation();
+            renderExperiences();
+            renderCertificates();
+
+            // Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('cert-modal');
+                    if (!modal.classList.contains('hidden')) closeCertModal();
+                }
+            });
+        }
+
+        window.onload = initializePortfolio;
+    </script>
+</body>
+</html>
